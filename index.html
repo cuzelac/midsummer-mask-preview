@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Midsummer Night's Dream — Donkey Headdress Preview</title>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0a;
+    color: #e8e0d8;
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    text-align: center;
+    padding: 32px 24px 16px;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 5vw, 42px);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: #f0e6d8;
+    margin-bottom: 6px;
+  }
+
+  header h1 em {
+    font-style: italic;
+    color: #c8a87a;
+  }
+
+  header .subtitle {
+    font-size: clamp(13px, 2.5vw, 16px);
+    color: #8a7e72;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .viewer-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px 16px;
+    min-height: 50vh;
+  }
+
+  model-viewer {
+    width: 100%;
+    max-width: 900px;
+    height: 70vh;
+    max-height: 700px;
+    border-radius: 12px;
+    background: radial-gradient(ellipse at center, #1a1714 0%, #0a0908 70%);
+    --poster-color: transparent;
+  }
+
+  model-viewer::part(default-progress-bar) {
+    background: #c8a87a;
+  }
+
+  .info-bar {
+    text-align: center;
+    padding: 16px 24px 32px;
+  }
+
+  .info-bar p {
+    font-size: 14px;
+    color: #6a6058;
+    line-height: 1.6;
+  }
+
+  .info-bar .hint {
+    font-size: 12px;
+    color: #4a443e;
+    margin-top: 8px;
+  }
+
+  .credit {
+    font-size: 11px;
+    color: #3a3530;
+    text-align: center;
+    padding: 0 24px 16px;
+  }
+
+  /* Touch-friendly on mobile */
+  @media (max-width: 600px) {
+    model-viewer {
+      height: 60vh;
+      border-radius: 8px;
+    }
+    header { padding: 24px 16px 12px; }
+    .info-bar { padding: 12px 16px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Donkey Headdress — <em>A Midsummer Night's Dream</em></h1>
+  <div class="subtitle">3D Form Preview &bull; Pocket Opera</div>
+</header>
+
+<div class="viewer-container">
+  <model-viewer
+    id="main-viewer"
+    src="mask.glb"
+    camera-controls
+    touch-action="pan-y"
+    shadow-intensity="0.8"
+    environment-image="neutral"
+    shadow-softness="1"
+    exposure="0.7"
+    tone-mapping="commerce"
+    camera-orbit="30deg 75deg 2.2m"
+    min-camera-orbit="auto auto 1m"
+    max-camera-orbit="auto auto 5m"
+    auto-rotate
+    auto-rotate-delay="3000"
+    rotation-per-second="12deg"
+    interaction-prompt="auto"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    alt="3D preview of charred bark donkey headdress for A Midsummer Night's Dream"
+  ></model-viewer>
+</div>
+
+<div class="info-bar">
+  <p>Drag to orbit &bull; Pinch or scroll to zoom &bull; Two-finger drag to pan</p>
+  <p class="hint">Auto-rotation pauses when you interact, resumes after 3 seconds</p>
+</div>
+
+<div class="credit">
+  Direction: Nicolas Aliaga &bull; Design & fabrication: Chris Cuzelac
+</div>
+
+</body>
+</html>
